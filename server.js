@@ -26,6 +26,7 @@ app.post('/upload', upload.single('audio'), (req, res) => {
   
   const uploadedAudio = req.file;
   const audioUrl = `${req.protocol}://${req.get('host')}/audio/${uploadedAudio.filename}`;
+  console.log("audioURL-",audioUrl)
   res.status(200).json({ url: audioUrl });
 });
 
